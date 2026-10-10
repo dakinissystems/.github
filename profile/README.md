@@ -7,199 +7,103 @@
   &nbsp;&nbsp;&nbsp;
   <img src="./assets/streamautomator.png" alt="StreamAutomator" width="70">
   &nbsp;&nbsp;&nbsp;
-  <img src="./assets/core.png" alt="Dakinis Core" width="70">
+  <img src="./assets/core.png" alt="Dakinis One" width="70">
 </p>
 
 <div align="center">
 
-# 🚀 Dakinis Systems
+# Dakinis Systems
 
-### Building modern SaaS solutions for communication, automation and business management.
+### Software para operar el negocio, coordinar comunidades y programar contenido — sobre una plataforma compartida.
 
 [![Organization](https://img.shields.io/badge/GitHub-dakinissystems-181717?logo=github)](https://github.com/dakinissystems)
-![Status](https://img.shields.io/badge/Status-Active%20Development-success)
-![Platform](https://img.shields.io/badge/Platform-SaaS-blue)
-![Backend](https://img.shields.io/badge/Backend-Node.js-339933?logo=node.js&logoColor=white)
-![Frontend](https://img.shields.io/badge/Frontend-React-61DAFB?logo=react&logoColor=black)
-![Database](https://img.shields.io/badge/Database-PostgreSQL-4169E1?logo=postgresql&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Active-success)
+![Site](https://img.shields.io/badge/Web-dakinissystems.com-0A7A5A)
 
-> **Building software that grows with your ideas.**
+**Sitio:** [dakinissystems.com](https://dakinissystems.com) · **Estado del ecosistema:** [docs/STATUS](https://github.com/dakinissystems/dakinis-systems/blob/main/docs/STATUS.md)
 
 </div>
 
 ---
 
-# 🌍 About Dakinis Systems
+## Qué resolvemos
 
-Dakinis Systems desarrolla un ecosistema de aplicaciones SaaS orientadas a comunicación, automatización y gestión empresarial.
+Dakinis Systems construye un **ecosistema SaaS** con tres capas:
 
-Nuestra arquitectura está basada en servicios independientes que comparten autenticación, infraestructura y componentes reutilizables.
+| Capa | Para quién | Productos |
+|------|------------|-----------|
+| **Negocio** | Operaciones, hospitality, finanzas | [Dakinis One](https://core.dakinissystems.com) · [LifeFlow](https://finance.dakinissystems.com) · [Hub](https://hub.dakinissystems.com) |
+| **Creadores y comunidades** | Streamers y grupos online | [StreamAutomator](https://streamautomator.com) · [AkoeNet](https://akoenet.dakinissystems.com) |
+| **Plataforma** | Todos los productos anteriores | Auth, Billing, AI, Search, Notifications, Knowledge, DES (UX compartida) |
 
----
-
-# 🚀 Ecosistema
-
-| Producto | Descripción |
-|----------|-------------|
-| 💬 **AkoeNet** | Plataforma de comunicación para comunidades |
-| 📅 **StreamAutomator** | Automatización para streamers y creadores |
-| 🏢 **Dakinis Core** | Plataforma modular de gestión empresarial |
+No son apps aisladas con la misma marca: comparten identidad, facturación, búsqueda y experiencia de usuario cuando aplica.
 
 ---
 
-# 💬 AkoeNet
+## Productos
 
-Una plataforma moderna inspirada en Discord para comunidades privadas.
+| Producto | Qué es | Abrir |
+|----------|--------|-------|
+| **Dakinis One** (código: Core) | Sistema de gestión empresarial modular — clientes, operaciones, hospitality | [core.dakinissystems.com](https://core.dakinissystems.com) |
+| **LifeFlow** | Radar de flujo de caja (proyección, no solo histórico) | [finance.dakinissystems.com](https://finance.dakinissystems.com) |
+| **Hub** | “Mi día primero” — atención y entrada al ecosistema | [hub.dakinissystems.com](https://hub.dakinissystems.com) |
+| **StreamAutomator** | Programación y gestión de contenido para streamers | [streamautomator.com](https://streamautomator.com) |
+| **AkoeNet** | Comunidades: chat, voz, DMs, Twitch / StreamAutomator | [akoenet.dakinissystems.com](https://akoenet.dakinissystems.com) · [Descargas](https://akoenet.dakinissystems.com/download) |
 
-### Características
-
-- Chats en tiempo real
-- Servidores y canales
-- Roles y permisos
-- Administración de comunidades
-- Arquitectura escalable
-
----
-
-# 📅 StreamAutomator
-
-Automatiza la gestión del contenido para streamers.
-
-### Funciones
-
-- Programación de publicaciones
-- Twitch
-- Discord
-- Redes Sociales
-- Analytics
+Madurez real por producto: [STATUS.md](https://github.com/dakinissystems/dakinis-systems/blob/main/docs/STATUS.md) (🟢 producción · 🟡 beta · 🟠 MVP · ⬜ roadmap).
 
 ---
 
-# 🏢 Dakinis Core
-
-ERP modular desarrollado sobre Dakinis Platform.
-
-### Incluye
-
-- CRM
-- Agenda
-- Inventario
-- Restaurante
-- Reservas
-- WhatsApp
-- Facturación
-- Inteligencia Artificial
-
----
-
-# 🏗 Arquitectura
+## Arquitectura (vista)
 
 ```text
-                           Dakinis Systems
-                                  │
-      ┌───────────────────────────┼───────────────────────────┐
-      │                           │                           │
-   AkoeNet                StreamAutomator             Dakinis Core
-      │                           │                           │
-      └────────────── Shared Services ─────────────────────────┘
-                              │
-       Authentication • Billing • Notifications • Storage
+                    Cloudflare → Gateway (api.dakinissystems.com)
+                                      │
+              ┌───────────────────────┼───────────────────────┐
+              ▼                       ▼                       ▼
+           Auth IdP                  Hub                  Productos
+              │                       │              One · LifeFlow · SA · AkoeNet
+              └───────────────────────┴──────────┬────────────┘
+                                                 ▼
+                    Platform: Billing · Internal · AI · Search · Notifications · Knowledge
+                                                 │
+                                          DES / dakinis-shared (paquetes, no un servicio)
 ```
 
----
-
-# ⚙️ Stack Tecnológico
-
-### Frontend
-
-- React
-- Vite
-- Bootstrap
-- Capacitor
-
-### Backend
-
-- Node.js
-- Express
-
-### Bases de Datos
-
-- PostgreSQL
-- SQLite
-
-### Infraestructura
-
-- Docker
-- Railway
-- Cloudflare
-
-### Servicios
-
-- Redis
-- BullMQ
-- Stripe
-- Sentry
+Detalle: [SYSTEMS.md](https://github.com/dakinissystems/dakinis-systems/blob/main/docs/SYSTEMS.md) · [ARCHITECTURE.md](https://github.com/dakinissystems/dakinis-systems/blob/main/docs/ARCHITECTURE.md)
 
 ---
 
-# 📦 Repositorios
+## Repositorios clave
 
-| Repositorio | Función |
-|-------------|---------|
-| `akoenet-client` | Frontend AkoeNet |
-| `akoenet-backend` | Backend AkoeNet |
-| `streamautomator` | Plataforma de automatización |
-| `dakinis-core` | Plataforma principal |
-| `dakinis-auth` | Servicio de autenticación |
-| `dakinis-shared` | Librerías compartidas |
+| Repo | Rol |
+|------|-----|
+| [`dakinis-systems`](https://github.com/dakinissystems/dakinis-systems) | Orquestación: gateway, contratos, Docker, docs |
+| [`dakinis-core`](https://github.com/dakinissystems/dakinis-core) | Dakinis One (web + API) |
+| [`dakinis-streamautomator`](https://github.com/dakinissystems/dakinis-streamautomator) | StreamAutomator |
+| [`akoenet-client`](https://github.com/dakinissystems/akoenet-client) / [`akoenet-backend`](https://github.com/dakinissystems/akoenet-backend) | AkoeNet |
+| [`dakinis-hub`](https://github.com/dakinissystems/dakinis-hub) | Hub |
+| [`dakinis-auth`](https://github.com/dakinissystems/dakinis-auth) | Identidad |
+| [`dakinis-shared`](https://github.com/dakinissystems/dakinis-shared) | Paquetes DES |
+| Platform APIs | `dakinis-billing`, `dakinis-search`, `dakinis-notifications`, `dakinis-internal-api`, `dakinis-knowledge`, `dakinis-ai` |
 
----
-
-# 🎯 Filosofía
-
-Creemos que el software debe ser:
-
-- 🚀 Escalable
-- 🔒 Seguro
-- ⚡ Rápido
-- ❤️ Fácil de usar
-- 🧩 Modular
-- 🛠 Fácil de mantener
+Estándar de README: [DOC-STANDARDS.md](https://github.com/dakinissystems/dakinis-systems/blob/main/docs/DOC-STANDARDS.md)
 
 ---
 
-# 🛣 Roadmap
+## Stack (resumen)
 
-- ✅ Arquitectura Modular
-- ✅ Autenticación Centralizada
-- ✅ Shared Libraries
-- 🚧 Multi-Tenant Platform
-- 🚧 AI Services
-- 🚧 Marketplace
-- 🚧 Public API
-- 📱 Mobile Apps
+Node.js · React · PostgreSQL · Redis · Railway · Cloudflare · Stripe · Sentry
 
 ---
 
-# 🤝 Contribuir
+## Contacto
 
-Actualmente nuestros proyectos están en desarrollo activo.
-
-Próximamente publicaremos componentes y librerías Open Source.
-
----
+- Web: [dakinissystems.com](https://dakinissystems.com)
+- Organización: [github.com/dakinissystems](https://github.com/dakinissystems)
 
 <div align="center">
 
-## 🌐 Organización
-
-https://github.com/dakinissystems
-
----
-
-### Building • Innovate • Scale
-
-**Made with ❤️ by Dakinis Systems**
+**Hecho por Dakinis Systems**
 
 </div>
