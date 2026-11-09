@@ -74,18 +74,17 @@ Detalle: [SYSTEMS.md](https://github.com/dakinissystems/dakinis-systems/blob/mai
 
 ---
 
-## Repositorios clave
+## Repositorios públicos
 
 | Repo | Rol |
 |------|-----|
-| [`dakinis-systems`](https://github.com/dakinissystems/dakinis-systems) | Orquestación: gateway, contratos, Docker, docs |
+| [`dakinis-systems`](https://github.com/dakinissystems/dakinis-systems) | Orquestación: gateway, contratos, Docker, docs, scaffolds |
 | [`dakinis-core`](https://github.com/dakinissystems/dakinis-core) | Dakinis One (web + API) |
 | [`dakinis-streamautomator`](https://github.com/dakinissystems/dakinis-streamautomator) | StreamAutomator |
-| [`akoenet-client`](https://github.com/dakinissystems/akoenet-client) / [`akoenet-backend`](https://github.com/dakinissystems/akoenet-backend) | AkoeNet |
-| [`dakinis-hub`](https://github.com/dakinissystems/dakinis-hub) | Hub |
-| [`dakinis-auth`](https://github.com/dakinissystems/dakinis-auth) | Identidad |
-| [`dakinis-shared`](https://github.com/dakinissystems/dakinis-shared) | Paquetes DES |
-| Platform APIs | `dakinis-billing`, `dakinis-search`, `dakinis-notifications`, `dakinis-internal-api`, `dakinis-knowledge`, `dakinis-ai` |
+| [`akoenet-client`](https://github.com/dakinissystems/akoenet-client) | Cliente de AkoeNet. El API no tiene repositorio público |
+| [`dakinis-landing`](https://github.com/dakinissystems/dakinis-landing) | Sitio dakinissystems.com |
+
+Auth, Hub, los paquetes DES y las APIs de Billing, Search, Notifications, Internal, Knowledge y AI no están en la organización pública. Contratos y scaffolds: [`dakinis-systems`](https://github.com/dakinissystems/dakinis-systems).
 
 Estándar de README: [DOC-STANDARDS.md](https://github.com/dakinissystems/dakinis-systems/blob/main/docs/DOC-STANDARDS.md)
 
